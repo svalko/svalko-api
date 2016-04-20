@@ -7,7 +7,7 @@
 ## Получение псто на глагне
 
 _request_
-GET **glagne/{skip: int, page_sizet: int}**
+GET **glagne/{skip: int, page_size: int}**
 
 _response_
 ```
@@ -39,16 +39,49 @@ _response_
   title: PSTO title
   tiser: PSTO tiser
   autor: name of STUPID POSTER
-  comments: count of comments
+  comments_count: count of comments
   ptaags: list of tags-ptaags
   
+}
+```
+
+## Поиск пстов
+
+GET **post/search/{_request_}**
+
+_request_
+```
+{
+//  required
+  q: string,
+//  optional
+  skip: int,
+  page_size: int,
+  search_in: list of [ptaags, psto, comments]
+}
+```
+
+_response_
+```
+{
+  items:[{
+    id: PSTO id
+    date: iCO date-time
+    title: PSTO title
+    tiser: PSTO tiser
+    autor: name of STUPID POSTER
+    comments_count: count of comments
+    ptaags: list of tags-ptaags
+  }],
+  query_param:string,
+  total_count:int
 }
 ```
 
 ## Получение комментсов по псто
 
 _request_
-GET **post/{psto_id: int}/comments**
+GET **post/comments/{psto_id: int, skip: int, page_size: int}**
 
 _response_
 ```
@@ -99,37 +132,4 @@ POST to BASE_URL/SPAM
   myspam: custom string of spam 
 }
 Return string “И куда ты спам пстить собрался?”
-```
-
-## Поиск пстов
-
-GET **search/_request_**
-
-_request_
-```
-{
-//  required
-  q: string, 
-//  optional
-  skip: int, 
-  page_size: int, 
-  search_in: list of [ptaags, psto, comments]
-}
-```
-
-_response_
-```
-{
-  items:[{
-    id: PSTO id
-    date: iCO date-time
-    title: PSTO title
-    tiser: PSTO tiser
-    autor: name of STUPID POSTER
-    comments: count of comments
-    ptaags: list of tags-ptaags
-  }],
-  query_param:string,
-  total_count:int
-}
 ```
