@@ -1,0 +1,9 @@
+{
+	"name": "svalko-nodejs-api",
+	"version": "0.0.1",
+	"description": "NodeJS api for http://svalko.org",
+	"main": "svalko.js",
+	"dependencies": {
+		"request": "*"
+	}
+}
