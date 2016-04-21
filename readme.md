@@ -9,7 +9,7 @@
 _request_
 GET **glagne/{skip: int, page_size: int}**
 
-_response_
+[_response_](#glagne-psto-response)
 ```
 {
   items:[{  
@@ -22,9 +22,16 @@ _response_
     ptaags: list of tags-ptaags
   }],
 
-  count:int
+  total_count:int
 }
 ```
+
+## Получение новых псто с глагне
+
+_request_
+GET **glagne/new/{date: ISO date-time}**
+
+<a name="glagne-psto-response">_response_</a>
 
 ## Получение единичкогова псто
 
@@ -94,10 +101,9 @@ _response_
     text: body of comment
   }],
   
-  count: int
+  total_count: int
 }
 ```
-**НЕТ _count_**
 
 ## Запостеть боян
 

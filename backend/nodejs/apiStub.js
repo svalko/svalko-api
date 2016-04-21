@@ -37,7 +37,7 @@ module.exports = {
 		}]
 	},
 
-	'search/request': [{
+	'post/search': [{
 		items: [{
 			id: 3,
 			date: '2016-10-25T09:10:11',
