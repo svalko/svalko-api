@@ -1,0 +1,25 @@
+{
+  "name": "svalko-api",
+  "version": "1.0.0",
+  "description": "Апи для подключения к svalko.org",
+  "main": "backend/nodejs/svalko.js",
+  "scripts": {
+    "test": "node backend/nodejs/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melphis/svalko-api.git"
+  },
+  "keywords": [
+    "svalko",
+    "svalko.org",
+    "api",
+    "nodejs"
+  ],
+  "author": "Melphis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melphis/svalko-api/issues"
+  },
+  "homepage": "https://github.com/melphis/svalko-api#readme"
+}

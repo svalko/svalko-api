@@ -8,4 +8,6 @@ svalko.loadGlagne()
 	.then(psto => console.log(Colors.red.underline('Psto!!'), psto))
 	.then(() => svalko.loadPstoComments(2, 1))
 	.then(comments => console.log(Colors.red.underline('Comments!!!'), comments))
-	.catch(e => console.error(e));
+	.then(() => svalko.searchPsto('Хуй хуй', svalko.pstoSearchTypes))
+	.then(items => console.log(Colors.red.underline('Search!!!!'), items))
+	.catch(e => console.error(e.stack));

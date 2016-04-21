@@ -9,7 +9,7 @@
 _request_
 GET **glagne/{skip: int, page_size: int}**
 
-_response_
+[_response_](#glagne-psto-response)
 ```
 {
   items:[{  
@@ -17,14 +17,21 @@ _response_
     date: ISO date-time
     title: PSTO title
     tiser: PSTO tiser
-    autor: name of STUPID POSTER
+    author: name of STUPID POSTER
     comments: count of comments
     ptaags: list of tags-ptaags
   }],
 
-  count:int
+  total_count:int
 }
 ```
+
+## Получение новых псто с глагне
+
+_request_
+GET **glagne/new/{date: ISO date-time}**
+
+<a name="glagne-psto-response">_response_</a>
 
 ## Получение единичкогова псто
 
@@ -38,7 +45,7 @@ _response_
   date: iCO date-time
   title: PSTO title
   tiser: PSTO tiser
-  autor: name of STUPID POSTER
+  author: name of STUPID POSTER
   comments_count: count of comments
   ptaags: list of tags-ptaags
   
@@ -69,7 +76,7 @@ _response_
     date: iCO date-time
     title: PSTO title
     tiser: PSTO tiser
-    autor: name of STUPID POSTER
+    author: name of STUPID POSTER
     comments_count: count of comments
     ptaags: list of tags-ptaags
   }],
@@ -90,14 +97,13 @@ _response_
     id: cament id
     date: iSO date-time
     title: cament title
-    autor: name of STUPID POSTER
+    author: name of STUPID POSTER
     text: body of comment
   }],
   
-  count: int
+  total_count: int
 }
 ```
-**НЕТ _count_**
 
 ## Запостеть боян
 
@@ -106,7 +112,7 @@ POST **post/**
 _request_
 ```
 {
-  autor: PSTO AUTHOR
+  author: PSTO AUTHOR
   text: PSCO content
 }
 ```

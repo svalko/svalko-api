@@ -1,7 +1,17 @@
 'use strict';
 
-const URL = 'http://api.svalko.org/1.0/';
-const XYI = 'ХУЙ из ундефинед';
+const URL = 'http://api.svalko.org/1.0/',
+	XYI = 'ХУЙ из ундефинед',
+
+	/**
+	 * @typedef {object} PstoSearchTypes
+	 * @enum
+	 */
+	PstoSearchTypes = {
+		ptaags: 'ptaags',
+		psto: 'psto',
+		comments: 'comments'
+	};
 
 // TODO: Комментарии
 
@@ -54,16 +64,32 @@ class Svalko {
 	}
 
 	/**
-	 * Получение пстов на глагне.
-	 * @param {number}	[page=1]
+	 * Список типов для поиска по постам
+	 * @enum
+	 * @returns {PstoSearchTypes}
 	 */
-	loadGlagne(page) {
+	get pstoSearchTypes() {
+		return PstoSearchTypes;
+	}
+
+	/**
+	 * Получение пстов на глагне. При указании date, то ищутся начиная от неё.
+	 * @param {number}	[page=1]
+	 * @param {Date}	[date]
+	 */
+	loadGlagne(page, date) {
 		page = page || 1;
 
 		let skip = (page - 1) * _config.glagne.pageSize,
-			pageSize = _config.glagne.pageSize;
+			pageSize = _config.glagne.pageSize,
+			params = {
+				skip: skip,
+				page_size: pageSize
+			};
 
-		return load('glagne', {skip: skip, page_size: pageSize})
+		date && (params.date = date.toISOString());
+
+		return load('glagne', params)
 			.then(function(data) {
 				if (page === 1 && data.items.length) {
 					_lastPstoId = data.items[0].id;
@@ -72,10 +98,40 @@ class Svalko {
 			});
 	}
 
+	/**
+	 * Поиск постов
+	 * @param {string}		query		текст для поиска
+	 * @param {PstoSearchTypes}	searchIn	тип поиска
+	 * @param {number}		[page=1]	номер страницы
+	 */
+	searchPsto(query, searchIn, page) {
+		page = page || 1;
+
+		let skip = (page - 1) * _config.glagne.pageSize,
+			pageSize = _config.glagne.pageSize,
+			params = {
+				q: query,
+				skip: skip,
+				page_size: pageSize,
+				search_in: searchIn
+			};
+
+		return load('post/search', params);
+	}
+
+	/**
+	 * Загрузка поста
+	 * @param {number}	pstoId
+	 */
 	loadPsto(pstoId) {
 		return load('post', {psto_id: pstoId});
 	}
 
+	/**
+	 * Загрузка комментов поста
+	 * @param {number}	pstoId
+	 * @param {number}	[page]
+	 */
 	loadPstoComments(pstoId, page) {
 		return load('post/comments', {psto_id: pstoId});
 	}
