@@ -5,7 +5,7 @@ module.exports = {
 			date: '2016-10-25T09:10:11',
 			title: 'Psto title',
 			tiser: 'Psto tiser xyiser',
-			autor: 'Author - mudak',
+			author: 'Author - mudak',
 			comments: 23,
 			ptaags: ['хуй', 'пизда', 'шуруповёрт']
 		}]
@@ -16,7 +16,7 @@ module.exports = {
 		date: '2016-10-25T09:10:11',
 		title: 'Psto title',
 		tiser: 'Psto tiser xyiser',
-		autor: 'Author - mudak',
+		author: 'Author - mudak',
 		comments_count: 2,
 		ptaags: ['хуй', 'пизда', 'шуруповёрт']
 	},
@@ -26,13 +26,13 @@ module.exports = {
 			id: 1,
 			date: '2016-10-25T09:10:11',
 			title: 'Psto title',
-			autor: 'Хуй с горы а не автор',
+			author: 'Хуй с горы а не автор',
 			text: 'Не коммент, а хуй знает что'
 		}, {
 			id: 2,
 			date: '2016-09-25T15:10:11',
 			title: 'Psto title 2',
-			autor: 'Хуй с горы а не автор 2',
+			author: 'Хуй с горы а не автор 2',
 			text: 'Не коммент, а хуй знает что 2'
 		}]
 	},
@@ -43,7 +43,7 @@ module.exports = {
 			date: '2016-10-25T09:10:11',
 			title: 'Search title',
 			tiser: 'Search tiser xyiser',
-			autor: 'Author - mudak',
+			author: 'Author - mudak',
 			comments_count: 2,
 			ptaags: ['search']
 		}, {
@@ -51,7 +51,7 @@ module.exports = {
 			date: '2016-10-25T09:10:11',
 			title: 'Psto title',
 			tiser: 'Psto tiser xyiser',
-			autor: 'Author - mudak',
+			author: 'Author - mudak',
 			comments_count: 2,
 			ptaags: ['Хуй хуй хуй']
 		}],

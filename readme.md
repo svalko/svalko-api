@@ -17,7 +17,7 @@ GET **glagne/{skip: int, page_size: int}**
     date: ISO date-time
     title: PSTO title
     tiser: PSTO tiser
-    autor: name of STUPID POSTER
+    author: name of STUPID POSTER
     comments: count of comments
     ptaags: list of tags-ptaags
   }],
@@ -45,7 +45,7 @@ _response_
   date: iCO date-time
   title: PSTO title
   tiser: PSTO tiser
-  autor: name of STUPID POSTER
+  author: name of STUPID POSTER
   comments_count: count of comments
   ptaags: list of tags-ptaags
   
@@ -76,7 +76,7 @@ _response_
     date: iCO date-time
     title: PSTO title
     tiser: PSTO tiser
-    autor: name of STUPID POSTER
+    author: name of STUPID POSTER
     comments_count: count of comments
     ptaags: list of tags-ptaags
   }],
@@ -97,7 +97,7 @@ _response_
     id: cament id
     date: iSO date-time
     title: cament title
-    autor: name of STUPID POSTER
+    author: name of STUPID POSTER
     text: body of comment
   }],
   
@@ -112,7 +112,7 @@ POST **post/**
 _request_
 ```
 {
-  autor: PSTO AUTHOR
+  author: PSTO AUTHOR
   text: PSCO content
 }
 ```
